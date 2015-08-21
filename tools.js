@@ -44,6 +44,9 @@ var tools = {
     isDefined: function (value) {
         return typeof value !== 'undefined';
     },
+    isMobile: function () {
+        return /(iphone|ipod|ipad|android|blackberry|windows ce|palm|symbian)/i.test(navigator.userAgent);
+    },
     addUrlParam: function (base, key, value) {
         if (base && key && value) {
             var sep = (base.indexOf('?') > -1) ? '&' : '?';
