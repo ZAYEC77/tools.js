@@ -53,5 +53,8 @@ var tools = {
             return base + sep + key + '=' + value;
         }
         return base;
+    },
+    getFunction: function (fn) {
+        return this.isFunction(fn) ? fn : function(){};
     }
 };
