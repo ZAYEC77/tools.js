@@ -64,5 +64,15 @@ var tools = {
     },
     getFunction: function (fn) {
         return this.isFunction(fn) ? fn : function(){};
+    },
+    isImageLoaded: function (img) {
+        if (!img.complete) {
+            return false;
+        }
+
+        if (typeof img.naturalWidth !== "undefined" && img.naturalWidth === 0) {
+            return false;
+        }
+        return true;
     }
 };
