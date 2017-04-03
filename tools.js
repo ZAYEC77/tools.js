@@ -13,6 +13,16 @@
             }
         });
     }
+    if (!String.prototype.replaceAll) {
+        Object.defineProperty(String.prototype, 'replaceAll', {
+            enumerable: false,
+            configurable: false,
+            writable: false,
+            value: function (search, replace) {
+                return this.split(search).join(replace);
+            }
+        });
+    }
     String.prototype.addUrlParam = function (key, value) {
         return tools.addUrlParam(this, key, value);
     };
