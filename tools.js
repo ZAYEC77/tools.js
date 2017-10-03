@@ -23,6 +23,16 @@
             }
         });
     }
+    String.prototype.hashCode = function () {
+        var hash = 0, char;
+        if (this.length === 0) return hash;
+        for (var i = 0; i < this.length; i++) {
+            char = this.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash;
+        }
+        return hash;
+    };
     String.prototype.addUrlParam = function (key, value) {
         return tools.addUrlParam(this, key, value);
     };
